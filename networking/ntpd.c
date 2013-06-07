@@ -1650,14 +1650,13 @@ update_local_clock(peer_t *p)
 		 */
 		VERB4 bb_error_msg("stepping time by %+f; poll_exp=MINPOLL", offset);
 		step_time(offset);
+		run_script("step", offset);
 		if (option_mask32 & OPT_q) {
 			/* We were only asked to set time once. Done. */
 			exit(0);
 		}
 
 		clamp_pollexp_and_set_MAXSTRAT();
-
-		run_script("step", offset);
 
 		recv_time += offset;
 
