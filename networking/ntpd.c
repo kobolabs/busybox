@@ -1376,6 +1376,7 @@ update_local_clock(peer_t *p)
 		 */
 		VERB3 bb_error_msg("stepping time by %+f; poll_exp=MINPOLL", offset);
 		step_time(offset);
+		run_script("step", offset);
 		if (option_mask32 & OPT_q) {
 			/* We were only asked to set time once. Done. */
 			exit(0);
@@ -1384,8 +1385,6 @@ update_local_clock(peer_t *p)
 		G.polladj_count = 0;
 		G.poll_exp = MINPOLL;
 		G.stratum = MAXSTRAT;
-
-		run_script("step", offset);
 
 #if USING_INITIAL_FREQ_ESTIMATION
 		if (G.discipline_state == STATE_NSET) {
