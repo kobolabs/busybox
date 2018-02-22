@@ -163,13 +163,13 @@
  *   datapoints after the step.
  */
 
-#define INITIAL_SAMPLES    4    /* how many samples do we want for init */
+#define INITIAL_SAMPLES    2    /* how many samples do we want for init */
 #define MIN_FREQHOLD      12    /* adjust offset, but not freq in this many first adjustments */
 #define BAD_DELAY_GROWTH   4    /* drop packet if its delay grew by more than this factor */
 
-#define RETRY_INTERVAL    32    /* on send/recv error, retry in N secs (need to be power of 2) */
+#define RETRY_INTERVAL     1    /* on send/recv error, retry in N secs (need to be power of 2) */
 #define NOREPLY_INTERVAL 512    /* sent, but got no reply: cap next query by this many seconds */
-#define RESPONSE_INTERVAL 16    /* wait for reply up to N secs */
+#define RESPONSE_INTERVAL  5    /* wait for reply up to N secs */
 #define HOSTNAME_INTERVAL  4    /* hostname lookup failed. Wait N * peer->dns_errors secs for next try */
 #define DNS_ERRORS_CAP  0x3f    /* peer->dns_errors is in [0..63] */
 
