@@ -92,9 +92,9 @@
  * and we go back to steady state.
  */
 
-#define RETRY_INTERVAL  5       /* on error, retry in N secs */
-#define RESPONSE_INTERVAL 15    /* wait for reply up to N secs */
-#define INITIAL_SAMPLES 4       /* how many samples do we want for init */
+#define RETRY_INTERVAL  1       /* on error, retry in N secs */
+#define RESPONSE_INTERVAL 5     /* wait for reply up to N secs */
+#define INITIAL_SAMPLES 2       /* how many samples do we want for init */
 
 /* Clock discipline parameters and constants */
 
